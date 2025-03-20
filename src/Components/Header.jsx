@@ -6,6 +6,7 @@ import python from "../assets/python.svg";
 import arrow from "../assets/arrow.svg";
 import avatars from "../assets/avatars.svg";
 import heroimg from "../assets/hero-img.png";
+import { Icons } from "./icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -140,11 +141,16 @@ const Header = () => {
           </div>
 
           <div className="mt-2.5">
-            <h4 className="font-header text-7xl font-medium text-white">
+            {/* updated lineheight here */}
+            <h4 className="font-header text-7xl font-medium leading-24 text-white">
               <span>Online</span> School for Learning{" "}
-              <span className="border-2 border-dashed px-2 -translate-y-1/2 border-[#FBFF48]">
+              <span className="relative">
                 {" "}
                 Python
+                <span className="absolute -top-[2px] left-[4px]">
+                  {/* added the border as an icons assets */}
+                  <Icons.Border />
+                </span>
               </span>
             </h4>
 
