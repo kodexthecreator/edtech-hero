@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="text-white min-h-screen bg-[url('assets/bg-circle.png')] bg-no-repeat overflow-x-hidden">
+    <div className="text-white pb-20 min-h-screen bg-[url('assets/bg-circle.png')] bg-no-repeat overflow-x-hidden">
       <nav className="flex justify-between items-center lg:mx-14 lg:my-4 mx-4 my-2 lg:py-2 py-3">
         <img src={logo} alt="C-Sports Company Logo" width={54} height={24} />
 
@@ -143,14 +143,18 @@ const Header = () => {
             </div>
 
             <div className="flex lg:flex-row flex-col justify-items-center items-center lg:justify-end mt-12 relative">
-              {/* Mobile view - order matters for z-index in flex containers */}
-              <div className="lg:hidden flex flex-col relative w-full items-center">
-                {/* Scholarship box goes AFTER arrow in markup but appears on TOP visually */}
-                <img src={arrow} alt="" className="-mt-10 absolute z-0" />
-                <div className="border-primary border-r-2 border-b-2 w-fit z-20 relative">
-                  <p className="px-4 py-3 font-body -mt-6 bg-white/10 text-white text-base border-[#0A0809] border-r-2 border-b-2">
+              {/* Mobile view - revised positioning */}
+              <div className="lg:hidden flex w-full h-24 items-center justify-center">
+                {/* Scholarship box positioned above the arrow */}
+                <div className="border-primary border-r-2 border-b-2 w-fit relative z-50 top-0">
+                  <p className="px-4 py-3 font-body bg-white/10 text-white text-base border-[#0A0809] border-r-2 border-b-2">
                     Win $500 in scholarships{" "}
                   </p>
+                </div>
+
+                {/* Arrow positioned below */}
+                <div className="absolute -z-10 top-10">
+                  <Icons.Arrow />
                 </div>
               </div>
 
@@ -168,7 +172,7 @@ const Header = () => {
         </div>
 
         {/* Right image section */}
-        <div className="lg:w-1/2 flex justify-center items-center">
+        <div className="lg:w-1/2 md:mt-0 mt-12 flex justify-center items-center">
           <img
             src={heroimg}
             alt="hero image"
