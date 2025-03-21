@@ -20,7 +20,7 @@ const Header = () => {
       <nav className="flex justify-between items-center lg:mx-14 lg:my-4 mx-4 my-2 lg:py-2 py-3">
         <img src={logo} alt="C-Sports Company Logo" width={54} height={24} />
 
-        {/* Desktop View Navigation - Now positioned for right alignment with image */}
+        {/* Desktop View Navigation */}
         <div className="hidden md:flex space-x-5 items-center">
           <a
             href="#"
@@ -28,21 +28,18 @@ const Header = () => {
           >
             Home
           </a>
-
           <a
             href="#"
             className="hover:text-neutral-200 text-white/70 text-sm font-body font-light"
           >
             About
           </a>
-
           <a
             href="#"
             className="hover:text-neutral-200 text-white/70 text-sm font-body font-light"
           >
             Courses
           </a>
-
           <a
             href="#"
             className="hover:text-neutral-200 text-white/70 text-sm font-body font-light ml-auto pr-8"
@@ -93,7 +90,7 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu - Now with smooth transition */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden absolute top-16 left-0 right-0 z-50 bg-neutral-900/60 backdrop-blur-md border border-neutral-800 p-4 mt-1 transition-all duration-300 transform ${
           isOpen
@@ -130,10 +127,10 @@ const Header = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="flex lg:mx-auto lg:mt-20 mx-4 my-2 container">
-        {/* Left content section - exactly 50% width */}
-        <div className="w-1/2 pr-4">
-          <div className="flex bg-white/5 space-x-2 rounded-full px-3 py-4 w-fit">
+      <div className="justify-center items-center flex flex-col lg:flex-row lg:mx-auto lg:mt-20 mx-4 my-2 lg:container">
+        {/* Left content section */}
+        <div className="justify-center items-center lg:w-1/2 px-4">
+          <div className="flex items-center justify-center bg-white/5 md:w-fit rounded-full px-1.5 lg:px-3 py-4 lg:mx-0 lg:w-fit mx-4">
             <img src={avatars} alt="avatars" width={72} />
             <p className="font-sm font-body font-normal">
               500+ students enrolled
@@ -141,24 +138,28 @@ const Header = () => {
           </div>
 
           <div className="mt-2.5">
-            {/* updated lineheight here */}
-            <h4 className="font-header text-7xl font-medium leading-24 text-white">
-              <span>Online</span> School for Learning{" "}
-              <span className="relative">
+            <h4 className="font-header text-4xl lg:text-7xl font-medium leading-12 lg:text-start text-center lg:leading-24 text-white">
+              <span className="relative lg:px-2 px-0.5">
+                Online{" "}
+                <span className="absolute lg:top-19 top-9 -left-3">
+                  <Icons.Line />
+                </span>
+              </span>
+              School for Learning{" "}
+              <span className="relative px-2">
                 {" "}
                 Python
-                <span className="absolute -top-[2px] left-[4px]">
-                  {/* added the border as an icons assets */}
+                <span className="absolute lg:-top-[2px] lg:left-[3px] -top-8 left-[3px]">
                   <Icons.Border />
                 </span>
               </span>
             </h4>
 
-            <p className="mt-5 font-body text-base">
+            <p className="mt-5 font-body text-base text-center lg:text-start">
               Learn from experts, build projects, and get certified.
             </p>
 
-            <div className="flex mt-5 gap-x-4">
+            <div className="flex mt-5 gap-x-4 items-center justify-center lg:justify-start">
               <p className="px-4 py-3 font-body text-base rounded-md bg-primary text-black">
                 Enroll Now
               </p>
@@ -167,19 +168,33 @@ const Header = () => {
               </p>
             </div>
 
-            <div className="flex justify-end mt-12">
-              <img src={arrow} alt="" className="-mr-6 -mt-4" />
-              <div className="border-primary border-r-2 border-b-2">
-                <p className="px-4 py-3 font-body bg-white/10 text-white text-base border-[#0A0809] border-r-2 border-b-2">
-                  Win $500 in scholarships{" "}
-                </p>
+            <div className="flex lg:flex-row flex-col justify-items-center items-center lg:justify-end mt-12 relative">
+              {/* Mobile view - order matters for z-index in flex containers */}
+              <div className="lg:hidden flex flex-col relative w-full items-center">
+                {/* Scholarship box goes AFTER arrow in markup but appears on TOP visually */}
+                <img src={arrow} alt="" className="-mt-10 absolute z-0" />
+                <div className="border-primary border-r-2 border-b-2 w-fit z-20 relative">
+                  <p className="px-4 py-3 font-body -mt-6 bg-white/10 text-white text-base border-[#0A0809] border-r-2 border-b-2">
+                    Win $500 in scholarships{" "}
+                  </p>
+                </div>
+              </div>
+
+              {/* Desktop view */}
+              <div className="hidden lg:flex lg:flex-row items-center">
+                <img src={arrow} alt="" className="lg:-mr-6 -mt-10 z-0" />
+                <div className="border-primary border-r-2 border-b-2 w-fit z-10">
+                  <p className="px-4 py-3 font-body -mt-6 bg-white/10 text-white text-base border-[#0A0809] border-r-2 border-b-2">
+                    Win $500 in scholarships{" "}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right image section - exactly 50% width */}
-        <div className="w-1/2 flex justify-center items-center">
+        {/* Right image section */}
+        <div className="lg:w-1/2 flex justify-center items-center">
           <img
             src={heroimg}
             alt="hero image"
