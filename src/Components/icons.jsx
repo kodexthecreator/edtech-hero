@@ -17,6 +17,42 @@ export const Icons = {
       </svg>
     );
   },
+  Close: () => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-6 text-primary transition-transform duration-300"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    );
+  },
+  Nav: () => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-6 transition-transform duration-300 rotate-90"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </svg>
+    );
+  },
 
   Line: () => {
     return (
@@ -40,8 +76,8 @@ export const Icons = {
   Bordersm: () => {
     return (
       <svg
-        width="160"
-        height="90"
+        width="120"
+        height="60"
         viewBox="0 0 232 98"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

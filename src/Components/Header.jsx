@@ -55,37 +55,7 @@ const Header = () => {
             className="text-white focus:outline-none transition-transform duration-300"
             aria-label={isOpen ? "CloseMenu" : "OpenMenu"}
           >
-            {isOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6 transition-transform duration-300 rotate-90"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6 text-primary transition-transform duration-300"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            )}
+            {isOpen ? <Icons.Nav /> : <Icons.Close />}
           </button>
         </div>
       </nav>
@@ -138,7 +108,7 @@ const Header = () => {
           </div>
 
           <div className="mt-2.5">
-            <h4 className="font-header text-4xl lg:text-7xl font-medium leading-12 lg:text-start text-center lg:leading-24 text-white">
+            <h4 className="font-header text-4xl lg:text-7xl font-medium leading-16 sm:lg-12 lg:text-start text-center lg:leading-24 text-white">
               <span className="relative lg:px-2 px-0.5">
                 Online{" "}
                 <span className="absolute lg:top-19 top-9 -left-3">
@@ -149,8 +119,12 @@ const Header = () => {
               <span className="relative px-2">
                 {" "}
                 Python
-                <span className="absolute lg:-top-[2px] lg:left-[3px] -top-8 left-[3px]">
+                <span className="absolute sm:visible invisible lg:-top-[2px]  -top-8 left-[12px]">
                   <Icons.Border />
+                </span>
+                {/* ADDING BORDER VISIBLITY BASED ON MOBILE SCREEN SIZE */}
+                <span className="absolute visible sm:invisible  -top-3 left-[12px]">
+                  <Icons.Bordersm />
                 </span>
               </span>
             </h4>
